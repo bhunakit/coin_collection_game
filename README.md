@@ -29,32 +29,40 @@ The Coin Collection Game is an automated 2-player strategy game where two AI age
 Clone the repository and navigate to the project directory:
 
 ```bash
-git clone [your-repository-link]
-cd [repository-name]
+git clone https://github.com/bhunakit/coin_collection_game.git
+cd coin_collection_game
 ```
 
 ## Running the Code
 
 ### Demo Mode
 
+```bash
 python game.py --demo
+```
 
 This will initiate a game session and automatically manage both players' moves, showing how the AI makes decisions under a stochastic environment.
 
 ### Evaluate Expectimax
 
+```bash
 python game.py --run
+```
 
 This mode will typically run multiple simulations and provide statistical feedback on the performance of the expectimax algorithm compared to random decision-making.
 
 ### Optimize Parameters
 
+```bash
 python game.py --optimize
+```
 
 This will run algorithms designed to tune the expectimax heuristic parameters for optimal performance.
 
 ### Help
 
+```bash
 python game.py --help
+```
 
 For help with the commands
