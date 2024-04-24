@@ -30,6 +30,9 @@ Clone the repository and navigate to the project directory:
 
 ```bash
 git clone https://github.com/bhunakit/coin_collection_game.git
+```
+
+```bash
 cd coin_collection_game
 ```
 
