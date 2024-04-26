@@ -14,7 +14,7 @@ class Game:
         self.directions = ['up', 'down', 'left', 'right']
 
     def update_coin_count(self):
-        self.coin_left = sum(sum(row) for row in self.board)
+        self.coin_left = sum(1 for row in self.board for cell in row if cell in (1, 2))
 
     def update_coin_state(self):
         for r in range(8):
@@ -195,7 +195,7 @@ class Game:
         return None
 
 # Training function to find best weights for state evaluation function:
-# [Depth 2] w1 = 9, w2 = 6, avg_turns = 79.0
+# [Depth 2] w1 = 8, w2 = 8, avg_turns = 81.0
 # [Depth 3] w1 = 9, w2 = 6, avg_turns = 79.0
 def find_best_weights(depth):
     game = Game()
@@ -205,6 +205,7 @@ def find_best_weights(depth):
     # Testing weight of 100x100 integer sample space
     for w1 in range(1, 10):
         for w2 in range(1, 10):
+            print(f"Testing weights (w1={w1}, w2={w2})", end='')
             score = 0
             # Run 100 trials for each weight combination to reduce degree of randomness
             for i in range(100):
@@ -221,7 +222,7 @@ def find_best_weights(depth):
                 score += turns
 
             average_score = score / 100.0
-            print(f"Testing weights (w1={w1}, w2={w2}): Average Turns = {average_score}")
+            print(f"Average Turns = {average_score}")
 
             if average_score < best_score:
                 best_score = average_score
@@ -295,9 +296,9 @@ def main():
     args = parser.parse_args()
 
     if args.demo:
-        demo()
+        demo(depth=5)
     elif args.run:
-        run_game()
+        run_game(depth=4)
     elif args.optimize:
         find_best_weights(depth=3)
     else:

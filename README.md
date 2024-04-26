@@ -17,8 +17,9 @@ The Coin Collection Game is an automated 2-player strategy game where two AI age
 ## Features
 
 - **Dynamic Game Board**: The board is initialized filled by 67% with coins which can either be solid or transparent.
-- **Expectimax AI**: Implements the Expectimax algorithm for strategic decision-making in a stochastic game environment. The goal here is to maximize the expected utility.
 - **Consecutive Coin Bonuses**: Players earn points by collecting coins, with bonuses for consecutive collections calculated as the square of the streak length.
+- **Expectimax AI**: Implements the Expectimax algorithm for strategic decision-making in a stochastic game environment. The goal here is to maximize the expected utility.
+  - **Heuristics**: Score at each state to get generally optimal position and amount of coins in proximity to get the path that leads to the most bonus
 
 ## Prerequisites
 
@@ -29,11 +30,11 @@ The Coin Collection Game is an automated 2-player strategy game where two AI age
 Clone the repository and navigate to the project directory:
 
 ```bash
-git clone https://github.com/bhunakit/coin_collection_game.git
+git clone https://github.com/bhunakit/expectimax_coin_collection.git
 ```
 
 ```bash
-cd coin_collection_game
+cd expectimax_coin_collection
 ```
 
 ## Running the Code
